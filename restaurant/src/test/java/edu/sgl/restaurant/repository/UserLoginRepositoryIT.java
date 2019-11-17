@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import edu.sgl.restaurant.domain.UserLogin;
 
 @SpringBootTest
+@DataJpaTest
 public class UserLoginRepositoryIT {
 
   @Autowired
@@ -21,7 +23,7 @@ public class UserLoginRepositoryIT {
         .fullname("ABV")
         .age(18)
         .build();
-    //repository.save(userLogin);
+    repository.save(userLogin);
   }
 
   @Test
