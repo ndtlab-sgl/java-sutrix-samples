@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Restaurant - Menu List</title>
+</head>
+<body>
+	<h1>Menu List</h1>
+	<div>
+		<form th:action="@{/menu/search}" method="post" th:object="${searchForm}">
+			<input type="text" th:field="*{name}"/>
+			
+			<button type="submit">Search</button>
+		</form>
+		
+	</div>
+	<table>
+		<thead>
+			<tr>
+				<th>Menu Name</th>
+				<th>Menu Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="menuItem : ${menuList}">
+				<td><span th:text="${menuItem.getName()}"> Name </span></td>
+				<td><span th:text="${menuItem.getDescription()}">
+						Description </span></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Restaurant</title>
 </head>
 <body>
 	<h1>This is the internal restaurant management system</h1>
+	<span th:text="${welcomeName}">test</span>
+	<a th:href="@{/menu}" th:text="Menu"></a>
 </body>
 </html>
